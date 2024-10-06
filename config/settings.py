@@ -32,7 +32,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'tracker.apps.TrackerConfig',
+    'users.apps.UsersConfig',
+    'food_tracker.apps.FoodTrackerConfig',
 ]
 
 
