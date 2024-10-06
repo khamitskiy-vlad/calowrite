@@ -10,16 +10,14 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
-from pathlib import Path
-from dotenv import load_dotenv
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 load_dotenv(os.path.join(BASE_DIR, '.env'))
 
-SECRET_KEY = 'django-insecure-eatf5l19qf-1ap7+_nn!1tclkl%)5m3-^w*&ibgac^5^hx*t32'
+SECRET_KEY = os.getenv('SECRET_KEY', 'default_secret_key')
 
 DEBUG = True
 
@@ -34,7 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'tracker',
+    'tracker.apps.TrackerConfig',
 ]
 
 
