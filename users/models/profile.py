@@ -15,8 +15,8 @@ class Profile(models.Model):
     height = models.IntegerField(blank=True, validators=[MinValueValidator(0)])
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True)
 
-def __str__(self):
-    return f'{self.user.username} Profile'
+    def __str__(self):
+        return f'{self.user.username} Profile'
 
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
